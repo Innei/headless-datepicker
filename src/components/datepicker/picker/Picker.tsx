@@ -95,6 +95,8 @@ export type PickerProps<
      * @see https://floating-ui.com/docs/middleware
      */
     middleware?: UseFloatingOptions['middleware'];
+
+    onClose?: () => void;
   }
 >;
 
@@ -185,6 +187,12 @@ export const Picker = forwardRef(
         ...(elementAttachTo?.current ? floatingStyles : {}),
       },
     };
+
+    useEffect(() => {
+      if (!open) {
+        props.onClose?.();
+      }
+    }, [open]);
 
     return (
       <PickerContext.Provider

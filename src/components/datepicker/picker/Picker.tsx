@@ -118,6 +118,7 @@ export const Picker = forwardRef(
       defaultOpen: _defaultOpen = false,
       disableClickOutside = false,
       id,
+      onClose,
       ...props
     }: PickerProps<ElemenElementTag>,
     ref: Ref<HTMLElement>,
@@ -172,11 +173,13 @@ export const Picker = forwardRef(
     useSyncRef(refs.floating, ref);
 
     const handleClickOutside = () => {
-      if (disableClickOutside !== true && pickerState?.isOpen)
+      if (disableClickOutside !== true && pickerState?.isOpen) {
         dispatch({
           type: 'action',
           payload: { action: `close${pickerId}` },
         });
+        onClose?.();
+      }
     };
 
     useOnClickOutside([refs.floating, elementAttachTo], handleClickOutside);
@@ -187,12 +190,6 @@ export const Picker = forwardRef(
         ...(elementAttachTo?.current ? floatingStyles : {}),
       },
     };
-
-    useEffect(() => {
-      if (!open) {
-        props.onClose?.();
-      }
-    }, [open]);
 
     return (
       <PickerContext.Provider

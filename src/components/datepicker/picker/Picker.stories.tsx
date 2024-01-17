@@ -117,67 +117,8 @@ export const HourPicker = {
 } satisfies Story;
 
 export const DateHourPicker: Story = {
-  parameters: {
-    override: {
-      children: `{({ monthName, hour, minute, year }) => (
-    <>
-      <div className="flex w-full items-center justify-between space-x-6 py-2 rtl:space-x-reverse">
-        ${storyToJsx(Prev, {}, 'Button', 4)}
-        <div className="flex">
-          ${storyToJsx(
-            Toggle,
-            {
-              action: '"toggleHourPicker"',
-              children:
-                "{('0' + hour).slice(-2) + ':' + ('0' + minute).slice(-2)}",
-            },
-            'Button',
-            5,
-          )}
-          ${storyToJsx(ToggleMonth, { children: '{monthName}' }, 'Button', 5)}
-          ${storyToJsx(ToggleYear, { children: '{year}' }, 'Button', 5)}
-        </div>
-        ${storyToJsx(Next, {}, 'Button', 4)}
-      </div>
-      ${storyToJsx(DateItems, { type: false }, 'Items', 3)}
-      ${storyToJsx(
-        Today,
-        {
-          className:
-            '"mt-4 w-full bg-blue-700 p-2 text-sm font-medium hover:bg-blue-600"',
-        },
-        'Button',
-        3,
-      )}
-      ${storyToJsx(HourPicker, { id: '"HourPicker"' }, 'Picker', 3)}
-    </>
-  )}`,
-      middleware: false,
-    },
-  },
   args: {
     ...DatePicker.args,
-    children: ({ monthName, hour, minute, year }) => (
-      <>
-        <div className="flex w-full items-center justify-between space-x-6 py-2 rtl:space-x-reverse">
-          <Button {...Prev.args} />
-          <div className="flex">
-            <Button {...Toggle.args} action="toggleHourPicker">
-              {('0' + hour).slice(-2) + ':' + ('0' + minute).slice(-2)}
-            </Button>
-            <Button {...ToggleMonth.args}>{monthName}</Button>
-            <Button {...ToggleYear.args}>{year}</Button>
-          </div>
-          <Button {...Next.args} />
-        </div>
-        <Items {...DateItems.args} type={undefined} />
-        <Button
-          {...Today.args}
-          className="mt-4 w-full bg-blue-700 p-2 text-sm font-medium hover:bg-blue-600"
-        />
-        <Picker {...HourPicker.args} id="HourPicker" alwaysOpen={false} />
-      </>
-    ),
   },
 };
 

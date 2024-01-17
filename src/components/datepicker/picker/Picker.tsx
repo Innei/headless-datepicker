@@ -97,6 +97,8 @@ export type PickerProps<
     middleware?: UseFloatingOptions['middleware'];
 
     onClose?: () => void;
+
+    floatingOptions?: UseFloatingOptions;
   }
 >;
 
@@ -119,6 +121,7 @@ export const Picker = forwardRef(
       disableClickOutside = false,
       id,
       onClose,
+      floatingOptions,
       ...props
     }: PickerProps<ElemenElementTag>,
     ref: Ref<HTMLElement>,
@@ -168,6 +171,7 @@ export const Picker = forwardRef(
       },
       middleware: middleware,
       whileElementsMounted: autoUpdate,
+      ...floatingOptions,
     });
 
     useSyncRef(refs.floating, ref);

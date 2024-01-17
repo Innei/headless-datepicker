@@ -1,10 +1,10 @@
 # React Date Picker
 
-[![npm version](https://badge.fury.io/js/@aliakbarazizi%2Fheadless-datepicker.svg)](https://badge.fury.io/js/@aliakbarazizi%2Fheadless-datepicker)
-[![npm](https://img.shields.io/npm/dm/%40aliakbarazizi/headless-datepicker)](https://www.npmjs.com/package/@aliakbarazizi/headless-datepicker)
+[![npm version](https://badge.fury.io/js/@aliakbarazizi%2Fpicker.svg)](https://badge.fury.io/js/@aliakbarazizi%2Fpicker)
+[![npm](https://img.shields.io/npm/dm/%40aliakbarazizi/picker)](https://www.npmjs.com/package/@aliakbarazizi/picker)
 
 <p align="center">
-  <img src='https://github.com/aliakbarazizi/headless-datepicker/raw/main/media/screenshot.png'/>
+  <img src='https://github.com/aliakbarazizi/picker/raw/main/media/screenshot.png'/>
 </p>
 
 The Headless Datepicker is a powerful and flexible tool designed for ReactJS applications.
@@ -40,13 +40,13 @@ and logic while allowing developers to design their own user interface.
 The package can be installed via [npm](https://github.com/npm/cli):
 
 ```
-npm install @aliakbarazizi/headless-datepicker --save
+npm install @aliakbarazizi/picker --save
 ```
 
 Or via [yarn](https://github.com/yarnpkg/yarn):
 
 ```
-yarn add @aliakbarazizi/headless-datepicker
+yarn add @aliakbarazizi/picker
 ```
 
 ## Usage
@@ -54,7 +54,7 @@ yarn add @aliakbarazizi/headless-datepicker
 Import Datepicker component
 
 ```js
-import { Datepicker } from '@aliakbarazizi/headless-datepicker';
+import { Datepicker } from '@aliakbarazizi/picker';
 ```
 
 ## Basic example
@@ -93,12 +93,12 @@ Manually create a configuration object for your desired calendar type or use the
 - For the Jalali calendar:
 
   ```js
-  import { config } from '@aliakbarazizi/headless-datepicker/jalali';
+  import { config } from '@aliakbarazizi/picker/jalali';
   ```
 
 - For custom calendar:
 
-  create a config object base on [config](https://github.com/aliakbarazizi/headless-datepicker/blob/main/src/utils/config.ts)
+  create a config object base on [config](https://github.com/aliakbarazizi/picker/blob/main/src/utils/config.ts)
 
 ### Pass Configuration to Datepicker
 
@@ -112,7 +112,7 @@ Use the config prop to pass your configuration to the Datepicker component.
 
 ## Documentation
 
-Please see the [https://aliakbarazizi.github.io/headless-datepicker/](https://aliakbarazizi.github.io/headless-datepicker/)
+Please see the [https://aliakbarazizi.github.io/picker/](https://aliakbarazizi.github.io/picker/)
 
 ## License
 

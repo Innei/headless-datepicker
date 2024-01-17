@@ -19,7 +19,7 @@
   "files": [
     "dist"
   ],
-  "version": "2.0.2-fork.2",
+  "version": "2.0.2-fork.3",
   "main": "./dist/headless-datepicker.js",
   "module": "./dist/headless-datepicker.mjs",
   "types": "./dist/headless-datepicker.d.ts",
@@ -109,6 +109,5 @@
   },
   "resolutions": {
     "markdown-to-jsx": "~7.1.8"
-  },
-  "packageManager": "yarn@3.6.1"
+  }
 }

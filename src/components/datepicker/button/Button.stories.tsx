@@ -77,10 +77,13 @@ export const Toggle = {
           <Story />
         </div>
         <Picker
+          onClose={() => {
+            console.log('close');
+          }}
           defaultType="day"
           className="rounded-md bg-white p-4 shadow-md dark:bg-gray-800 dark:text-gray-300 w-[352px]"
           defaultOpen
-          disableClickOutside
+          // disableClickOutside
           attachTo={false}
         >
           <Items {...DateItems.args} type={undefined} />
